@@ -27,7 +27,7 @@ class SudokuServer
         std::bind(&SudokuServer::onConnection, this, _1));
     server_.setMessageCallback(
         std::bind(&SudokuServer::onMessage, this, _1, _2, _3));
-    server_.setThreadNum(numThreads);
+    server_.setThreadNum(numThreads);//开启多线程 one loop per thread
   }
 
   void start()
